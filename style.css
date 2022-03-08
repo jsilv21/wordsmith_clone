@@ -30,7 +30,7 @@ main {
 }
 
 #input, #topic{
-    border: dashed 1px;
+    border: dashed 1px black;
     margin: auto;
     width: 200px;
     height: 25px;
@@ -38,11 +38,13 @@ main {
     margin-bottom: 10px;
     display: block;
     text-align: center;
+    color:rgb(199, 199, 199);
 }
 
 #response{
+    color: rgb(199, 199, 199);
     margin-top: 50px;
-    border: 1px solid;
+    border: 1px solid black;
     height: 300px;
     width: 500px;
     margin: auto;
