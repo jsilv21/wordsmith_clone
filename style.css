@@ -1,3 +1,49 @@
 *{
     background-color: rgb(85, 85, 85);
+    font-family: 'League Spartan', sans-serif;
+}
+
+header{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+header img{
+    opacity: 80%;
+    margin: 0 auto;
+    filter: drop-shadow(0 0 30px rgb(17, 17, 17));
+    border-radius: 10%;
+}
+
+main {
+    height: 900px;
+    text-align: center;
+}
+
+.form_container{
+    width: 500px;
+    margin: auto;
+    text-align: center;
+    margin-top: 10px;
+    padding-bottom: 30px;
+}
+
+#input, #topic{
+    border: dashed 1px;
+    margin: auto;
+    width: 200px;
+    height: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: block;
+    text-align: center;
+}
+
+#response{
+    margin-top: 50px;
+    border: 1px solid;
+    height: 300px;
+    width: 500px;
+    margin: auto;
 }

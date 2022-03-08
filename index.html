@@ -6,8 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wordsmith V2</title>
     <link rel="stylesheet" type="text/css" href="style.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+    <header>
+        <div class="img">
+        <img src="/words.jpg" width="200px" height="150px"/>
+        </div>
+    </header>
+    <main>
+        <h1>Wordsmith V2.0</h1>
+        <div class="form_container">
+            Get some inspiration...
+            <form id="form">
+                <br>
+                First, a word to start the topic:
+                <input type="text" id="input" value="" placeholder="type in a word">
+                Next, a topic to elaborate on:
+                <input type="text" id="topic" value="" placeholder="type in a topic">
+                <button id="submit">Submit</button>
+            </form>
+        </div>
+        <div id="response">
+            <br>
+            RESPONSE GOES HERE
+        </div>
+    </main>
 </body>
 </html>
