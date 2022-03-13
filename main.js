@@ -22,12 +22,15 @@ const getSuggestions = async () => {
     const topicQuery = topicField.value;
     const endpoint = `${url}${queryParams}${wordQuery}${additionalParams}${topicQuery}`;
     try{
-        const response = await fetch(endpoint);
+        const response = await fetch(endpoint, {cache: 'no-cache'});
         if(response.ok){
             const jsonResponse = await response.json();
-            renderRawResponse(jsonResponse);
+            console.log(`query successful`)
+            renderResponse(jsonResponse);
         }
-        throw new Error('fetch request failed');
+        else {
+            throw new Error('fetch request failed');
+        }
     }catch(error){
         console.log(error);
     }        
