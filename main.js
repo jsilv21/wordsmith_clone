@@ -13,35 +13,27 @@ const submit = document.querySelector('#submit');
 const responseField = document.querySelector('#responseField');
 
 //combining query values into API endpoint string
-const getSuggestions =()=>{
-    event.preventDefault();
-    responseField.removeChild(responseField.firstChild);
-
-
+const getSuggestions = async () => {
+    event.preventDefault(); //prevents default button action 
+    if(responseField.firstChild){
+    responseField.removeChild(responseField.firstChild); //removes the prior result
+    }
     const wordQuery = inputField.value;
     const topicQuery = topicField.value;
     const endpoint = `${url}${queryParams}${wordQuery}${additionalParams}${topicQuery}`;
-
-//open request
-const xhr = new XMLHttpRequest();
-xhr.responseType = 'json';
-
-
-//listen for success
-xhr.onreadystatechange = () =>{
-    if (xhr.readyState === XMLHttpRequest.DONE){
-    renderRawResponse(xhr.response);
-    }
+    try{
+        const response = await fetch(endpoint);
+        if(response.ok){
+            const jsonResponse = await response.json();
+            renderRawResponse(jsonResponse);
+        }
+        throw new Error('fetch request failed');
+    }catch(error){
+        console.log(error);
+    }        
 }
 
-//get request
-xhr.open('GET',endpoint);
-xhr.send();
-console.log(`${endpoint}`)
-console.log('request sent')
-}
-
-// //update the response form
+// ? codecademys formatting to clear response before next query - prob better?
 // const displaySuggestions = (event) => {
 //     event.preventDefault();
 //     while(responseField.firstChild){
